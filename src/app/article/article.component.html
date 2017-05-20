@@ -1,0 +1,36 @@
+<p>
+  Displaying {{ articles.length }} articles.
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Title</th>
+    <th data-field="name">Text</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let a of articles">
+      <td>{{ a.title }}</td>
+      <td>{{ a.text }}</td>
+
+      <td>
+        <a [routerLink]="['/article',a.id]">
+          Edit
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteArticle(a)" href="">
+          Delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="bottom: 45px; right: 24px;">
+  <a routerLink="/article/new">
+    New
+  </a>
+</div>
