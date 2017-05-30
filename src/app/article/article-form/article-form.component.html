@@ -1,6 +1,6 @@
 <div class="container">
     <h1>{{ title }}</h1>
-    <form (ngSubmit)="save()">
+    <form (ngSubmit)="save()" enctype="multipart/form-data" method="POST">
       <div>
         <label for="name">Title</label>
         <input type="text" id="title" required [(ngModel)]="article.title" name='title'>
@@ -9,6 +9,13 @@
         <label for="text">Text</label>
         <input type="text" id="details" required [(ngModel)]="article.details" name='details'>
       </div>
+      <!--<div>
+        <label for="attachment">Upload File</label>
+        <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
+        <input type="file" (change)="fileChange($event)" id="attachment" name='attachment' [(ngModel)]="article.attachment">
+        <input type="file" id="attachment" name='attachment' [(ngModel)]="article.attachment">
+      </div>-->
+      
       <button type="submit">Submit</button>
     </form>
     <hr />
